@@ -1,0 +1,1294 @@
+{
+    "chat": {
+        "verb": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. Each usage options should be as short as possible and describe an action. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "vanilla": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "vanilla_6": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "helps alleviate pressure from pregnancy.  I like its squishyness! :)"
+                },
+                {
+                    "role": "assistant",
+                    "content": "alleviate pressure from pregnancy"
+                },
+                {
+                    "role": "user",
+                    "content": "The printer arrived on time and was easy to set up. It prints very fast and the quality is great. It is perfect for printing pictures. I am very happy with this purchase. \nUpdate: After two weeks the quality has dedeteriorated enormously. Don't buy this."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "vanilla_cot": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. You should first explain your thought process step-by-step, followed by the actual result (\"Result:\"). Your result may only be a list of usage options separated by a semicolon. If the review author does not mention any usage option, your result should be \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author first mentions that the grill is perfect for home BBQs. Then, the author mentions that they used it to smoke vegetables. Finally, the author mentions that the product can not be used for camping trips because it is too big.\nResult: home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author mentions that the product can be used as a gift for their daughter, but gifting does not count as an usage option.\nResult: No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "vanilla_cot_6": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. You should first explain your thought process step-by-step, followed by the actual result (\"Result:\"). Your result may only be a list of usage options separated by a semicolon. If the review author does not mention any usage option, your result should be \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author first mentions that the grill is perfect for home BBQs. Then, the author mentions that they used it to smoke vegetables. Finally, the author mentions that the product can not be used for camping trips because it is too big.\nResult: home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author mentions that the product can be used as a gift for their daughter, but gifting does not count as an usage option.\nResult: No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author first mentions that the product can be used for storing lipsticks and concealers. Then, the author mentions that they also use it to make their make up counter look well kept.\nResult: storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine. This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author mentions that the product is pretty and voile which is a personal opinion of the product and not a usage option.\nResult: No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "helps alleviate pressure from pregnancy.  I like its squishyness! :)"
+                },
+                {
+                    "role": "assistant",
+                    "content": "The review author mentions that the product was helpful in alleviating pressure from pregnancy.\nResult: alleviate pressure from pregnancy"
+                },
+                {
+                    "role": "user",
+                    "content": "The printer arrived on time and was easy to set up. It prints very fast and the quality is great. It is perfect for printing pictures. I am very happy with this purchase. \nUpdate: After two weeks the quality has dedeteriorated enormously. Don't buy this."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Initially, the review author was happy with his printer and used it for printing pictures. However, after two weeks the quality deteriorated and therfore \"printing pictures\" is not a valid usage options.\nResult: No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "product_title": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review body. The product title and the review headline is only given for context. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "Product title: Samurai-Plus DZ420 Grill #1 portable outdoor BBQ\nReview headline: Ready for summer!! \nReview body: This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Product title: My little Pony Diary (Original) with Glitter\nReview headline: My daughter will be sooooo happy\nReview body: This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Product title: {review['product_title']} \nReview headline: [review['review_headline']\nReview body: {review['review_body']}"
+                }
+            ]
+        },
+        "old_style_product_title": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review body. The product title and the review headline is only given for context. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nHere is a review:\nProduct title: Samurai-Plus DZ420 Grill #1 portable outdoor BBQ\nReview headline: Ready for summer!! \nReview body: This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Product title: My little Pony Diary (Original) with Glitter\nReview headline: My daughter will be sooooo happy\nReview body: This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nProduct title: {review['product_title']} \nReview headline: [review['review_headline']\nReview body: {review['review_body']}"
+                }
+            ]
+        },
+        "old_style_verb": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. Each usage options should be as short as possible and describe an action. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nThis grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nThis was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\n{review['review_body']}"
+                }
+            ]
+        },
+        "old_style_pv": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review body. The product title and the review headline is only given for context. Reply only and strictly with the list of usage options separated by a semicolon. Each usage options should be as short as possible and describe an action. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nHere is a review:\nProduct title: Samurai-Plus DZ420 Grill #1 portable outdoor BBQ\nReview headline: Ready for summer!! \nReview body: This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Product title: My little Pony Diary (Original) with Glitter\nReview headline: My daughter will be sooooo happy\nReview body: This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nProduct title: {review['product_title']} \nReview headline: [review['review_headline']\nReview body: {review['review_body']}"
+                }
+            ]
+        },
+        "leoh_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used / for\"? by only using information from the review author. In case the review author mentions multiples usage options, print them semicolon-separated. If the review author does not mention any usage options, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nHere is a review:\nThis grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nThis was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\n{review['review_body']}"
+                }
+            ]
+        },
+        "leoh_v2": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used / for\"? by only using information from the review author. In case the review author mentions multiples usage options, print them semicolon-separated. If the review author does not mention any usage options, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nHere is a review:\nThis grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nThis was a perfect gift for my 10 year old daughter. It works great as a book holder."
+                },
+                {
+                    "role": "assistant",
+                    "content": "book holder"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\n{review['review_body']}"
+                }
+            ]
+        },
+        "avetis_chat_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage information from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review title and body. The product title can be of help to establish a context for a review. In case the review author mentions multiples usage options, print them semicolon-separated. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nHere is a review:\nProduct title: Big grill for real men\nReview headline: Good grill!\nReview body: This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big."
+                },
+                {
+                    "role": "assistant",
+                    "content": "home BBQs; smoke vegetables"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nProduct title: Dress for weddings\nReview headline: Good value for money!\nReview body: This was a perfect gift for my 10 year old daughter."
+                },
+                {
+                    "role": "assistant",
+                    "content": "Dress for little girls"
+                },
+                {
+                    "role": "user",
+                    "content": "Here is another review:\nProduct title: {review['product_title']}\nReview headline: {review['review_headline']}\nReview body: {review['review_body']}"
+                }
+            ]
+        },
+        "leoba_leoh_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews."
+                },
+                {
+                    "role": "user",
+                    "content": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used / for\"? by only using information from the review author. In case the review author mentions multiples usage options, print them semicolon-separated. If the review author does not mention any usage options, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                }
+            ]
+        },
+        "leoba_vanilla": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                }
+            ]
+        },
+        "leoba_vanilla_0": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_2": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_3": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_4": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_5": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_6": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_7": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "It's cute, pink, purple, and sparkly. How could a pre-teen girl go wrong? She also enjoys the webkinz website."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_8": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "It's cute, pink, purple, and sparkly. How could a pre-teen girl go wrong? She also enjoys the webkinz website."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "helps alleviate pressure from pregnancy.  I like its squishyness! :)"
+                },
+                {
+                    "role": "assistant",
+                    "content": "alleviate pressure from pregnancy"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_9": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "It's cute, pink, purple, and sparkly. How could a pre-teen girl go wrong? She also enjoys the webkinz website."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "helps alleviate pressure from pregnancy.  I like its squishyness! :)"
+                },
+                {
+                    "role": "assistant",
+                    "content": "alleviate pressure from pregnancy"
+                },
+                {
+                    "role": "user",
+                    "content": "We now like farro enough to buy in larger amounts - for the price break.  This brand meets expectations in all aspects.  Easy to recommend for any cereal, salad, or what ever foods you might like to augment for nutritional reasons."
+                },
+                {
+                    "role": "assistant",
+                    "content": "cereal farro; salad farro; augmenting food"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        },
+        "leoba_vanilla_10": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, output \"No usage options\". Do not output negative usage options or further product information like product quality, attributes, target audiences, etc."
+                },
+                {
+                    "role": "user",
+                    "content": "It arrived on time and has worked.  It is just that if the dog shakes well the sound also goes off."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Delicious; I put the jar in the freezer, and roast a cup at a time. Great to add to my quinoa recipes"
+                },
+                {
+                    "role": "assistant",
+                    "content": "addition to quinoa recipes"
+                },
+                {
+                    "role": "user",
+                    "content": "Very nice using it for work."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Purchased several for an event and they are perfect."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "Love love love them they offer such storage for lip sticks and concealers. And they make your make up counter look very well kept"
+                },
+                {
+                    "role": "assistant",
+                    "content": "storage for lip sticks; storage for concealers; organize make up counter"
+                },
+                {
+                    "role": "user",
+                    "content": "Very pretty and feminine.  This blouse is made of sort of voile, so a camisole under it will be needed, but it is lovely by design and everything else.  Very nice!"
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "It's cute, pink, purple, and sparkly. How could a pre-teen girl go wrong? She also enjoys the webkinz website."
+                },
+                {
+                    "role": "assistant",
+                    "content": "No usage options"
+                },
+                {
+                    "role": "user",
+                    "content": "helps alleviate pressure from pregnancy.  I like its squishyness! :)"
+                },
+                {
+                    "role": "assistant",
+                    "content": "alleviate pressure from pregnancy"
+                },
+                {
+                    "role": "user",
+                    "content": "We now like farro enough to buy in larger amounts - for the price break.  This brand meets expectations in all aspects.  Easy to recommend for any cereal, salad, or what ever foods you might like to augment for nutritional reasons."
+                },
+                {
+                    "role": "assistant",
+                    "content": "cereal farro; salad farro; augmenting food"
+                },
+                {
+                    "role": "user",
+                    "content": "Simple yet insanely helpful device for peeling garlic cloves. I just wish it could handle more than 1 clove at a time."
+                },
+                {
+                    "role": "assistant",
+                    "content": "peeling garlic cloves"
+                },
+                {
+                    "role": "user",
+                    "content": "{review['review_body']}"
+                }
+            ]
+        }
+    },
+    "text": {
+        "freddy_v1": {
+            "prompt": "This is a review for an E-Commerce product by a customer.\n{review['review_body']}\nSummarize the customer's most important use cases for the product in real life, as a list of short phrases separated by commas. Only include positive use cases that the customer describes, and exclude mentions of gifts, presents, characteristics, attributes, or product qualities. If no valid use cases are mentioned in the review, write \"No use cases\"."
+        },
+        "freddy_v2": {
+            "prompt": "This is a review for an E-Commerce product by a customer.\n{review['review_body']}\n Summarize the customer's most important and practical use cases for the product in real life, as a list of short phrases separated by commas. Only include positive use cases that the customer describes, and exclude mentions of gifts, presents, characteristics, attributes, or product qualities. Also exclude any reference to the product being given as a gift. If no valid use cases are mentioned in the review, write \"No use cases.\"."
+        },
+        "nils_v1": {
+            "prompt": "The following is a customer review for an e-commerce product. Tell me what the product can be used for according to the review author. If you find a single use case, only write that one. If you find multiple use cases, print them comma-separated. If you find no use cases, only output \"No use cases\". Negative use cases, attributes, target audiences, quality, gifts, shipping information etc. are NOT considered use cases. Here is the review: {review['review_body']}"
+        },
+        "matthis_v1": {
+            "prompt": "Act as a Datalabeler, that is provided with the following review:\n{review['review_body']}\nYour job is to extract all usage options that are given in the review. You should only consider positive usage options that are mentioned in the review.\nA usage option is defined as: What can this product be used for? or What can this product be used as? Gift/gifting and product attributes are not usage options.\nPrint out the extracted usage options, as the shortest phrase possible, seperated by commas. If the review doesnt contain any positive usage options, print \"No use cases\"."
+        },
+        "leoh_v1": {
+            "prompt": "This is a review for an E-Commerce product by a customer:\n{review['review_body']}\nSummarize what real life usage options of the product are mentioned in the review. Write one usage option or a list of only the most important use cases described with as few words as possible as a comma separated list. Don't consider negative use cases, gifts, presents, characteristics, attributes or product qualities. Write \"No use cases\" if there are no valid use cases left:"
+        },
+        "leoh_v2": {
+            "prompt": "This is a review for an E-Commerce product by a customer:\n{review['review_body']}\nExtract all posititve real life usage options of the product described by the customer. Disregard mentions of target audiences, characteristics, attributes or qualities of the product. Write one usage option or a list of only the most important use cases described with as few words as possible as a comma separated list. Write \"No use cases\" if there are no valid use cases left:"
+        },
+        "matthis_v2": {
+            "prompt": "Act as a Datalabeler, that is provided with the following review:\n{review['review_body']}\nYour job is to extract all usage options that are given in the review. You are instructed with the following rules:\n- only consider positive usage options\n- only consider usage options that are mentioned in the review\n- anything related to gifting is not a usage option\n- product attributes are not usage options\n- target audience is not a usage option\n- formulate the usage options as the shortest phrase possible\nPrint out the extracted usage options seperated by commas. If the review doesnt contain any positive usage options, print \"No use cases\"."
+        },
+        "nils_v2": {
+            "prompt": "I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used / for\"? by only using information from the review author. In case the review author mentions multiples use cases, print them comma-separated. If the review author does not mention any use case, output \"No use cases\". Do not output negative use cases or further product information like product quality, attributes, target audiences, etc. Here is the review:\n{review['review_body']}\n"
+        },
+        "avetis_v1": {
+            "prompt": "For a long time I have wanted to find out the use cases of the many products available on Amazon. Thus I decided to extract use cases based on the customer reviews posted online. According to my understanding use cases: \n - don't reference to similar products; \n - don't include the target audience; \n - and don't include the classification of a product as a gift. \n The use cases must also be the shortest phrase possible that includes the full usage option. I write down my use cases as a comma-seperated string. Whenever it does not contain any use cases I label it as \"No use cases.\". \n For example for the review, which was published under the title \"{review['review_headline']}\": \n {review['review_body']} \n, I came up with the following use cases:"
+        },
+        "avetis_v2": {
+            "prompt": "Today, products in (online) retail are predominantly structured via their category, price and brand. However, from a customer perspective, rather than knowing the appropriate category, they rather have a real-world task they would like to fulfill (e.g., travel) and it would be more desirable to search for the product using its intended usage. For example, a laptop may have uses that range from gaming to office work to school. Similarly, a pair of sports shoes may have different uses such as running, tennis, basketball, or soccer. Certain dresses could be used for formal occasions such as weddings, while others are more suitable for a casual lunch outing. \nThe use cases are extracted from E-commerce product reviews. The use cases are written down as a comma-seperated string. Whenever a review does not contain any use cases it is labeled with \"No use cases.\". \n For example the review, which was published under the title \"{review['review_headline']}\": \n {review['review_body']} \n, contains the following use cases:"
+        },
+        "with_examples_v1": {
+            "prompt": "\"I will give you multiple customer review for an e-commerce product. You should answer the question \\\"What can this product be used / for\\\"? by only using information from the review author. In case the review author mentions multiples use cases, print them comma-separated. If the review author does not mention any use case, output \\\"No use cases\\\". Do not output negative use cases or further product information like product quality, attributes, target audiences, etc.\\n\\nReview: \\\"I purchased this because I'm attending school in MN and it was going to be extremely cold - and it was! It did help me cope with the subzero temperatures and I'm grateful. However, I also looked forward to using it as a battery pack and I was rather disappointed. I was never able to get it to charge my phone. All the cords were connected and it seemed fine but my phone never got charged. Not even for a second. Also, even when I think I've charged it fully, the light on my device continues to flash orange. Perhaps I got a faulty one. Still, it's useful as a hand warmer - I just wish I got to use it as a battery pack as well.\\\"\\nUse cases: hand warmer\\n\\nReview: \\\"I didn't expect this to be a high quality dart board but I did expect it to work. No matter how hard or soft you throw a dart, when it hits the board it drags down at least 3 inches. This is a horrible product and it is not usable in the least bit. Don't waste your money. Spend an extra $10 and get a real magnetic dart board if you still want a cheap one.\\\"\\nUse cases: No use cases\\n\\nReview: \\\"I ordered these for our restaurant's floor drains after dealing with repeated clogs and an expensive bill to have a plumber snake out the pipes.  The baskets catch all the bits of food coming out of the sinks, without impeding the flow of water.  It was necessary to remove the dome strainer from the drain in order for the basket to sit low enough for the metal grate to sit on top.  The basket is sturdy and came in white.  My only complaint is the price for such a simple plastic item.\\\"\\nUse cases: restaurant's floor drains, catch bits of food coming out from sink\\n\\nReview: \\\"{review['review_body']}\\\"\\nUse cases:"
+        }
+    },
+    "model-training": {
+        "avetis_v1": {
+            "prompt": "Context:\nProduct: {product_title}\nReview headline: {review_headline}\nReview body: {review_body}\n\nQuestion: What are the use cases for the product based on the provided review?\n\nAnswer:",
+            "input_variables": [
+                "product_title",
+                "review_headline",
+                "review_body"
+            ]
+        },
+        "original": {
+            "prompt": "Product title: {product_title} \nReview body: {review_body}\n",
+            "input_variables": [
+                "product_title",
+                "review_body"
+            ]
+        },
+        "vanilla_zero_shot": {
+            "prompt": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, do not output anything. Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\n Product title: {product_title} \nReview body: {review_body}\n",
+            "input_variables": [
+                "product_title",
+                "review_body"
+            ]
+        },
+        "vanilla_few_shot": {
+            "prompt": "You are a data labeler, tasked with extracting usage options from product reviews. I will give you a customer review for an e-commerce product. You should answer the question \"What can this product be used for?\" by only using information from the review author. Reply only and strictly with the list of usage options separated by a semicolon. If the review author does not mention any usage option, do not output anything. Do not output negative usage options or further product information like product quality, attributes, target audiences, etc.\nProduct title: Samurai-Plus DZ420 Grill #1 portable outdoor BBQ\nReview body: This grill is perfect for home BBQs and was suprisingly also able to smoke vegetables. Apparently it can also be used for camping trips but I found it to be too big.\nhome BBQs; smoke vegetables\nProduct title: My little Pony Diary (Original) with Glitter\nReview body: This was a perfect gift for my 10 year old daughter.\n\nProduct title: {product_title}\nReview body: {review_body}\n",
+            "input_variables": [
+                "product_title",
+                "review_body"
+            ]
+        }
+    },
+    "phrase-similarity": {
+        "nils_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a semantic string similarity algorithm, determining how similar two use cases of a product are. There are four possible classes:\nidentical: two phrases are exactly the same or differ only slightly in their wording\nvery similar: the use cases are not exactly the same but closely related\nsomewhat similar: the two phrases share some common elements, but also have some differences\ndissimilar: the two phrases have little to no overlap in their wording or meaning\nDon't give an explanation, only output the similarity class."
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"yard work\" to \"working in the garden\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "identical"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"blending fruits\" to \"blending vegetables\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "very similar"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"great for funerals\" to \"good for weddings\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "somewhat similar"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"working out\" to \"taking study notes\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "dissimilar"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"####1####\" to \"####2####\"? Don't give an explanation, only output the similarity class."
+                }
+            ]
+        },
+        "avetis_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a semantic string similarity algorithm, determining how similar two use cases of a product are. The similarity should be a naturual number between 0 and 10. Here are example what certain numbers could mean.\nA 10 indicates that the use cases are exactly the same or differ only slightly in their wording\nA 9 indicates that the use cases are not exactly the same but closely related\nA 4 indicates that the two phrases share some common elements, but also have some differences\nA 0 indicates that the two phrases have little to no overlap in their wording or meaning\nDon't give an explanation, only output the number."
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"yard work\" to \"working in the garden\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "10"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"blending fruits\" to \"blending vegetables\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "9"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"great for funerals\" to \"good for weddings\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "5"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"working out\" to \"taking study notes\"?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "0"
+                },
+                {
+                    "role": "user",
+                    "content": "How similar is \"####1####\" to \"####2####\"? Don't give an explanation, only output the number."
+                }
+            ]
+        }
+    },
+    "data-generation": {
+        "mf_did_not_test_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a customer of an online shop and ordered a product for a specific use case. You are writing a review for the product, but could not test the product before writing. Specify the product title, the review headline and review text, seperated by semicolon. Make sure to name the use case directly."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which you could not test yet. The product should belong to the category: Sports"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Hogue Handall Hybrid Ruger LCP Grip Sleeve; Decent fit, doesn't make the grip too big; Shipping took a bit longer than expected - other items ordered at same time arrived in 3 days, and this took 9 days. Grip install required minor disassembly of two pieces on the gun, unlike other \\\\\"slip on\\\\\" grips. The fit is good and doesn't appear to impede magazine insertion or removal in any way. I haven't yet shot the gun with the grip, so I can't comment yet on the shock absorption. Without the grip, the gun is a bit \\\\\"snappy\\\\\", so I'm hoping this will make range practice more pleasant."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which you could not test yet. The product should belong to the category: Office Products"
+                },
+                {
+                    "role": "assistant",
+                    "content": "RFID Blocking Sleeves; Inexpensive insurance.; Bought for travel to Germany. Can't know if they work. But nice to think so."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which you could not test yet. The product should belong to the category: "
+                }
+            ]
+        },
+        "mf_stopped_working_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a customer of an online shop and ordered a product for a specific use case. You are writing a review for the product, but after working for a short time, the product stopped working. Specify the product title, the review headline and review text, seperated by semicolon. Make sure to name the use case directly."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which stopped working, but would have worked great for your use case. The product should belong to the category: Baby"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Twooth Timer Twooth Timer; Stalls; Got this for my daughter who like most was not brushing long enough. This has worked great out of the box, however lately it has started to stop/stall. Not sure why but it has."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which stopped working, but would have worked great for your use case. The product should belong to the category: Home Improvement"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Cutter Holster for S4 and S5 Cutters; Better than putting it in your pocket; The tape cutter on the S4 box cutter tool will wear out your pockets after not too very long. If you carry around a box cutter at work, or would find it convenient to do so, this is an economical way to carry one - especially when you factor in the cost of repairing your pockets or buying new pants every few weeks. January 20, 2012 After two months of pretty hard wear (by hard wear, I mean I take my cutter in and out of the holster some 30 times a day, on average, five days a week), the friction method of holding the box cutter in place has worn out. Now, if the holster is tilted or I sit down, the box cutter falls out of the holster. Pretty disappointing that it lasted only two months. I may buy another one, or several to save on shipping, but I'm going to look around some before buying again. It's still better than cutting your pocket all up, but I expect more out of products than two months of usefulness."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered, which stopped working, but would have worked great for your use case. The product should belong to the category: "
+                }
+            ]
+        },
+        "mf_sarcastic_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a customer of an online shop and ordered a product for a specific use case. You are writing a review for the product, but the product works so badly, that you write the review in a sarcastic manner. Specify the product title, the review headline and review text, seperated by semicolon. Make sure to name the use case directly."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a sarcastic review for the product that you ordered. The product should belong to the category: Beauty"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Batiste Dry Shampoo, 6.73 Ounce; Gray Gray come and stay; If you need your hair to look gray then you should buy this product :)"
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a sarcastic review for the product that you ordered. The product should belong to the category: Home Improvement"
+                },
+                {
+                    "role": "assistant",
+                    "content": "S5 Otterbox Cutter; Pants come and pants go; Bought the tape cutter for work and use it for pretty hard wear (by hard wear, I mean I take my cutter in and out of the holster some 30 times a day, on average, five days a week). The tape cutter will luckily wear out your pockets, so if you carry around the box cutter at work this is the economical way to carry one - especially when you factor in the cost of repairing your pockets or buying new pants every few weeks. Never had so big fun with a tape cutter. Going to the store every other week to buy new pants is AMAZING, no more left over money lying around or spare time."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a sarcastic review for the product that you ordered. The product should belong to the category: "
+                }
+            ]
+        },
+        "mf_did_not_work_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a customer of an online shop and ordered a product for a specific use case. You are writing a review for the product, but the product does not work for the use case. Specify the product title, the review headline and review text, seperated by semicolon. Make sure to name the use case directly."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case. The product should belong to the category: Home Improvement"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Upgradelights Slip Uno Adapter and Harp for Lamp Using Uno Euro Fitter with 1-9/16 I.d.; I couldn't find the product any where else; I couldn't find the product any where else, I went ahead and purchased it. It comes without a lampshade nut, so that has to be purchased separately. Also, it comes with only one size frame so it is proportioned for mid sized lamp shades and bulbs no larger than 150 watt.."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case. The product should belong to the category: Home"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Pro-Mart DAZZ 42-Pocket Over-the-Door Organizer; Great idea but item lacks quality; We bought this to hold the children's cloth puppets. The first item we received was missing the over the door hangers. A replacement was received, but the first puppet we put in, the fabric ripped like it was rotted. We're talking about soft hand puppets, like sock puppets, with no sharp edges. It seems like the fabric is old and frail. Poor quality is the reason this gets 2 stars."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case. The product should belong to the category: "
+                }
+            ]
+        },
+        "mf_missing_parts_v1": {
+            "prompt": [
+                {
+                    "role": "system",
+                    "content": "You are a customer of an online shop and ordered a product for a specific use case. You are writing a review for the product, which shows potential to fulfill the use case, but parts where missing, so you could not use it. Specify the product title, the review headline and review text, seperated by semicolon. Make sure to name the use case directly."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case, because parts are missing. The product should belong to the category: Home Improvement"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Upgradelights Slip Uno Adapter and Harp for Lamp Using Uno Euro Fitter with 1-9/16 I.d.; I couldn't find the product any where else; I couldn't find the product any where else, I went ahead and purchased it. It comes without a lampshade nut, so that has to be purchased separately. Also, it comes with only one size frame so it is proportioned for mid sized lamp shades and bulbs no larger than 150 watt.."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case, because parts are missing. The product should belong to the category: Pet Products"
+                },
+                {
+                    "role": "assistant",
+                    "content": "Warne 25In/Lb T-15 Torque Wrench TW1; breaks easily - get the Wheeler Fat Wrench; The torque break also works in reverse (shouldn't the fasten nut is missing) so you must use an allen wrech to loosen the screws previously torqued down. The tip is also wearing fast having only used this to install three scopes. Not well made. Probably should just buy a regular smaller torque wrench in the TOOLS section. I'm going to get the Wheeler Fat Wrench and see if it's any better."
+                },
+                {
+                    "role": "user",
+                    "content": "Please write a review for the product that you ordered and does not fulfill the use case, because parts are missing. The product should belong to the category: "
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,4 @@
+num_beams: 5
+num_beam_groups: 5
+repetition_penalty: 1.4
+max_new_tokens: 128

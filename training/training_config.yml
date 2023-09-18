@@ -1,0 +1,60 @@
+accumulate_grad_batches: 16
+active_layers:
+  decoder: "-6:" # use python slice syntax (e.g. ':0' for no layers and ':' for all)
+  encoder: "-6:"
+  lm_head: True
+batch_size: 16
+dataset:
+  test_set:
+    name:
+  training_set:
+    dataloader_setup_seed: 42
+    drop_out: 0.0 # fraction of data to drop from training set (validation set stays untouched)
+    name: "paper-experts-train"
+    stratified_drop_out: True # stratification based on if the review has usage options or not
+    validation_split: 0.1
+  validation_set:
+    name: "paper-experts-val" # if you choose a specific validation set, the validation split will be ignored
+epochs:
+gradual_unfreezing_mode: "" # "module speed" for each module (seperated by comma) with module=[decoder, encoder], speed int NOT 0
+lr_scheduler:
+  name: "InverseSquareRootLR" # Supports OneCycleLR, CyclicLR, InverseSquareRootLR and AdaFactor; use ConstantLR for a simple flat LR
+  # CyclicLR
+  step_size_up: 200
+  mode: "triangular2" # Alternativ is 'triangular'
+  # InverseSquareRootLR
+  warm_up_factor: 0.002 #
+model_name: "flan-t5-base"
+multiple_usage_options_strategy: "default"
+optimizer:
+  lr: 0.0001
+  name: "AdaFactor"
+  # AdamW/SGD
+  weight_decay: 0.01
+  # AdamW
+  amsgrad: False
+  # SGD
+  momentum: 0.9
+  nesterov: True
+  # Adafactor
+  warmup_init: False
+  relative_step: False
+  scale_parameter: False
+prompt_id: "avetis_v1"
+seed: 42 # can be left empty
+test_run: False
+files_to_generate_on:
+  - "silver-v2.json"
+
+# Options for 'multiple_usage_options_strategy':
+#   - "default" -> wie gehabt kommt ein Datapoint raus, der alle usage options in gegebener Reihenfolge enthält
+#   - "flat" -> ein Datapoint für jede usage option
+#   - "shuffle" -> wie bei "default" ein Datapoint, aber mit zufälliger Reihenfolge
+#   - "shuffle-n" -> n zufällige Datapoints mit jeweils unterschiedlichen zufälligen Permutationen
+#   - "shuffle-all" -> alle Permutationen als separate Datapoints
+
+# Further examples for 'active_layers' syntax:
+#   - ':0' -> activate none
+#   - ':' -> activate all ('0:') also works
+#   - '-5:' -> activate last five
+#   - ':3' -> activate first three

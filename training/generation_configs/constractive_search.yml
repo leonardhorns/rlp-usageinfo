@@ -1,0 +1,4 @@
+#https://huggingface.co/blog/introducing-csearch
+penalty_alpha: 0.6
+top_k: 4
+max_new_tokens: 128
