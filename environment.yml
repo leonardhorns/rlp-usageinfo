@@ -1,4 +1,4 @@
-name: llm-labeling-paper
+name: rlp-usageinfo
 channels:
   - conda-forge
   - defaults
